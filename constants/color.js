@@ -1,0 +1,18 @@
+export default {
+    TextoAzul: '#283693',
+    TextoGris: '#9E9E9E',
+    TextoNaranjo: '#F57706',
+    Primario: '#283693',
+    GrisOscuro: '#9E9E9E',
+    GrisClaro: '#F5F5F5',
+    Celeste: "#007DED",
+    Naranjo: '#F57706',
+    Azul: '#283693',
+    Gris: '#9E9E9E',
+    blanco: 'white',
+    DARK_SIENNA: "#450920",
+    MAROON: "#a53860",
+    BLUSH: "#da627d",
+    LIGTH_PINK: "#ffa5ab",
+    PEACH_PUFF: "#f9dbbd",
+}
