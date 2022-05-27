@@ -13,4 +13,18 @@ export const USUARIOSREGISTRADOSDATA = [
         nombre: 'Valesca',
         apellido: 'Doering',
     },
+    {
+        id: '3',
+        idColegio: '3',
+        email: 'monse@gmail.com',
+        nombre: 'Monserrat',
+        apellido: 'Andaur',
+    },
+    {
+        id: '4',
+        idColegio: '4',
+        email: 'cristian@gmail.com',
+        nombre: 'Cristian',
+        apellido: 'Mucherl',
+    },
 ];

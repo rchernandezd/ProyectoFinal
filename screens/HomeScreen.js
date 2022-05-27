@@ -3,10 +3,9 @@ import React, { useEffect, useState } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import color from '../constants/color';
-import { loadInvitado } from '../store/actions/Auth.action';
-import { selectColegio } from '../store/actions/Colegios.action';
 import { selectUsuario } from '../store/actions/Usuarios.action';
 import { signin } from '../store/actions/Auth.action';
+import variables from '../constants/variables';
 
 function HomeScreen({navigation}) {
    
@@ -70,9 +69,10 @@ function HomeScreen({navigation}) {
     }
 
     const handleSelectedIngresar = () => {
-        dispatch(loadInvitado(true));
-        navigation.navigate('HomeShop', {
-            nombre: '',
+        //dispatch(loadInvitado(true));
+        // navigation.navigate('HomeShop', {
+            navigation.navigate('BuscarColegio', {
+                nombre: '',
         });
     }
 
@@ -86,9 +86,9 @@ function HomeScreen({navigation}) {
     <View style={styles.screen}>
         <View style={styles.containerSuperior}>
             <Image
-                // source={require("../assets/Logo1SM.jpg")}
-                // style={{ width: 380, height: 180 }}/>
-                source={require("../assets/LogoAlmacen.png")}
+                // source={variables.logo}
+                // style={{ width: 370, height: 180, marginTop:20 }}/>
+                source={variables.logo}
                 style={{ width: 220, height: 220 }}/>
         </View>
         <View style={styles.containerInferior}>

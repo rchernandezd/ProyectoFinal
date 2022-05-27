@@ -9,8 +9,8 @@ const MainNavigator = () => {
 
     const sesionActiva = useSelector(state => state.auth.sesionActiva);
     const ingresarInvitado = useSelector(state => state.auth.ingresarInvitado);
-    console.log('Sesion Activa: ' + sesionActiva);
-    console.log('Invitado: ' + ingresarInvitado);
+    // console.log('Sesion Activa: ' + sesionActiva);
+    // console.log('Invitado: ' + ingresarInvitado);
 
     return (
         <NavigationContainer>

@@ -20,7 +20,7 @@ export const addFavorito = (idProducto, idCategoria, NombreProducto, NombreCateg
                 Precio,
                 Imagen
             )
-            //console.log('Action: AddFavorito' + result);
+            //console.log('Action: Imagen' + Imagen);
             dispatch({
                 type: ADD_FAVORITO,
                 payload: {id: result.insertId, idProducto, idCategoria, NombreProducto, NombreCategoria, Uso, Entrega, Precio, Imagen }

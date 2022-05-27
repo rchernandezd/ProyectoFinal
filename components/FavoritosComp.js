@@ -26,9 +26,9 @@ const FavoritosComp = ({ item, onDeleteFavorito }) => {
             <Ionicons style={styles.Favorito}  name="heart" onPress={handlerDeleteFavorito} size={25} color={color.Naranjo} />
                 <View style={styles.imagenProducto}>
                     <Image
-                            source={item.imagen}
+                            source={item.Imagen}
                             style={{ width: 100, height: 100, alignSelf: 'center' }}/>
-                        {/* <Text>{item.imagen}</Text> */}
+                        <Text>IMAGEN: {item.Imagen}</Text>
                 </View>
                 <View>
                     <Text style={styles.descProd}>{item.NombreProducto}</Text>

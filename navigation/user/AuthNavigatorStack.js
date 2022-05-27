@@ -1,5 +1,6 @@
 import { Image, Platform, Text, View } from 'react-native';
 
+import BuscarColegioScreen from '../../screens/BuscarColegioScreen';
 import BusquedasPorCategoriaScreen from '../../screens/BusquedasPorCategoriaScreen';
 import DetalleProductoScreen from '../../screens/DetalleProductoScreen';
 import EmprendededorDetalleScreen from '../../screens/EmprendedorDetalleScreen';
@@ -55,7 +56,15 @@ const AuthNavigatorStack =  () => {
                 options={{ 
                     title: 'Tu Almacen en Casa',
                 }}
-            />            
+            />      
+            <Stack.Screen 
+                name='BuscarColegio'
+                component={BuscarColegioScreen}
+                options={{ 
+                    headerTitle: (props) => <ImageHeaderComp {...props} item=''/>,
+                    //title: 'Tu Almacen en Casa',
+                }}
+            />         
             <Stack.Screen 
                 name='Productos'
                 component={ProductosScreen}

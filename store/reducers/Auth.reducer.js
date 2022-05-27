@@ -8,7 +8,10 @@ const initialState = {
     user: null,
     messageError: null,
     ingresarInvitado: false,
-    sesionActiva: false
+    sesionActiva: false,
+    idColegioInvitado: null,
+    nombreColegioInvitado: null,
+    imagenColegioInvitado: null
 }
 
 const AuthReducer = (state = initialState, action) => {    
@@ -23,8 +26,8 @@ const AuthReducer = (state = initialState, action) => {
             console.log(ERROR);
             return {...state, messageError: action.messageError}
         case INGRESAR_INVITADO:
-            console.log(INGRESAR_INVITADO);
-            return {...state, ingresarInvitado: action.ingresarInvitado}
+            // console.log(INGRESAR_INVITADO);
+            return {...state, ingresarInvitado: action.ingresarInvitado, idColegioInvitado: action.idColegioInvitado, nombreColegioInvitado:action.nombreColegioInvitado, imagenColegioInvitado: action.imagenColegioInvitado  }
         default:
             return state
     }

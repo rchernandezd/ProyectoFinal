@@ -12,7 +12,7 @@ const UsuariosReducer = (state = initialState, action) => {
             console.log('SELECT_USUARIO')
             // const Usu=state.usuarios.find(usuario => usuario.email === action.email)
             // console.log('ImagenColegioAction: ' + Usu.imagenColegio)
-            return { ...state, usuarioAutenticado: state.usuarios.find(usuario => usuario.email === action.email)  }
+            return { ...state, usuarioAutenticado: state.usuarios.find(usuario => usuario.email.toUpperCase().replace(" ", "") === action.email.toUpperCase().replace(" ", ""))  }
         default:
             return state
     }

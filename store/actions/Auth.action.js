@@ -7,9 +7,12 @@ export const ERROR = 'ERROR'
 export const INGRESAR_INVITADO = 'INGRESAR_INVITADO'
 export const SELECT_USUARIO = 'SELECT_USUARIO'
 
-export const loadInvitado = (ingresarInvitado) => ({
+export const loadInvitado = (ingresarInvitado, idColegioInvitado, nombreColegioInvitado,imagenColegioInvitado) => ({
     type: INGRESAR_INVITADO,
-    ingresarInvitado: ingresarInvitado
+    ingresarInvitado: ingresarInvitado,
+    idColegioInvitado: idColegioInvitado,
+    nombreColegioInvitado: nombreColegioInvitado,
+    imagenColegioInvitado: imagenColegioInvitado
 })
 
 export const signup = (email, password) => {
@@ -50,7 +53,8 @@ export const signup = (email, password) => {
 }
 
 export const signin = (email, password) => {
-    console.log('URL_AUTH_SIGNIN: ' + URL_AUTH_SIGNIN)
+    console.log('URL_AUTH_SIGNIN: ' + URL_AUTH_SIGNIN);
+    email = email.trim();
     return async dispatch => {
         try {
             const response = await fetch(URL_AUTH_SIGNIN, {
@@ -67,9 +71,9 @@ export const signin = (email, password) => {
             if(!response.ok) {
                 const errorResponse =  await response.json()
                 const errorID = errorResponse.error.message
-                console.log(email);
-                console.log(password);
-                console.log(errorID);
+                // console.log(email);
+                // console.log(password);
+                // console.log(errorID);
                 let message = 'No se ha podido validar'
                 if (errorID === 'EMAIL_NOT_FOUND') 
                     message = 'Este email no está registrado'
@@ -79,12 +83,15 @@ export const signin = (email, password) => {
                     else   
                         if (errorID == 'USER_DISABLED')
                             message = 'Usuario dehabilitado'
+                        else   
+                            if (errorID == 'INVALID_EMAIL')
+                                message = 'Mail no es valido'
                 console.log(message);
                 throw new Error(message)
             }
             const data = await response.json()
-            console.log("Dispatching SIGNIN");
-            console.log(data);
+            // console.log("Dispatching SIGNIN");
+            // console.log(data);
             dispatch({ 
                 type: SIGNIN,
                 token: data.idToken,
@@ -98,7 +105,7 @@ export const signin = (email, password) => {
             // })
         }
         catch(e) {
-            console.log('Error en Action: ' + e);
+            // console.log('Error en Action: ' + e);
             throw new Error(e.message);
             // dispatch({ 
             //     type: ERROR,

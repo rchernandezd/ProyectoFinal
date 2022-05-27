@@ -25,7 +25,6 @@ const ProductosComp = ({ item, onSelected }) => {
     //console.log('esFav: ' + esFav);
     
     const handlerAddFavorito = () => {
-        //console.log("ProductosComp: Add Favorito");
         const AddFav = favoritos.findIndex(fav => fav.idProducto === parseInt(item.id))
         AddFav === -1 ? 
             dispatch(addFavorito(item.id, item.idCategoria, item.nombreProducto, item.nombreCategoria, item.uso, item.entrega, item.precio, item.imagen))

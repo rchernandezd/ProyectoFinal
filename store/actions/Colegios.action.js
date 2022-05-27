@@ -4,3 +4,4 @@ export const selectColegio = (idColegio) => ({
     type: 'SELECT_USUARIO',
     idColegio: idColegio
 })
+

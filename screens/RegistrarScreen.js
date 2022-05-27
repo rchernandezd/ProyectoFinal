@@ -47,6 +47,10 @@ function RegistrarScreen({ navigation, route }) {
         setEmail(text);
     }
 
+    const handlerHome = () => {
+        navigation.navigate('Auth')
+    }
+
     return (
         <KeyboardAvoidingView
             behavior='height'
@@ -94,13 +98,13 @@ function RegistrarScreen({ navigation, route }) {
                 <View style={styles.button}>
                     <Button
                     title="Registrarme"
-                    color={color.Primario}
+                    color={color.Celeste}
                     onPress={handlerSignUp}
                     />
                 </View>
                 <View style={styles.prompt}> 
                     <Text style={styles.promptMessage}>{message}</Text>
-                    <TouchableOpacity onPress={() => console.log("Registrar")}>
+                    <TouchableOpacity onPress={handlerHome}>
                         <Text style={styles.promptButton}>{messageAction}</Text>
                     </TouchableOpacity>
                 </View>
@@ -120,7 +124,9 @@ const styles = StyleSheet.create({
         fontSize: 24,
         //fontFamily: 'OpenSansBold',
         marginBottom: 18,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: color.Azul,
+        fontWeight: 'bold',
     },
     container: {
         width: '80%',
@@ -143,15 +149,18 @@ const styles = StyleSheet.create({
     promptButton: {
         fontSize: 16,
         //fontFamily: 'OpenSansBold',
-        color: color.Primario,
+        color: color.Azul,
+        padding: 10,
+        fontWeight: 'bold',
     },
     button: {
         backgroundColor: color.Primario,
-        marginVertical: 20
+        marginVertical: 20,
     },
     label: {
         //fontFamily: "OpenSansBold",
         marginVertical: 8,
+        color: color.Azul,
     },
     input: {
         paddingHorizontal: 2,

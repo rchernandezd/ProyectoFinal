@@ -89,8 +89,8 @@ function BusquedasPorCategoriaScreen({navigation}) {
   return (
     <SafeAreaView>
         <ScrollView style={styles.screen}>
-            <View style={[styles.container, {height: 80}]}>
-                <Text>SLIDER</Text>
+            <View style={[styles.container, {height: 10}]}>
+                {/* <Text>SLIDER</Text> */}
             </View>
             <View style={[styles.container]}>
                 {/* <TextInput style={styles.input} placeholder='Buscar productos....'/> */}

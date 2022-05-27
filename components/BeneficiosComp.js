@@ -6,7 +6,7 @@ import color from '../constants/color';
 const BeneficiosComp = ({ item, onSelected }) => {
     return(
         <View style={[styles.cuadroExterior, { backgroundColor: "#FFFFFF" }]}> 
-            <TouchableOpacity onPress={() => onSelected(item)}>
+            {/* <TouchableOpacity onPress={() => onSelected(item)}> */}
                 <View style={styles.cuadroInterior}>
                     <Image
                         source={item.imagen}
@@ -14,7 +14,7 @@ const BeneficiosComp = ({ item, onSelected }) => {
                 </View>
                 <Text style={styles.nombreEmprendedor}>{item.nombreBeneficio}</Text>
                 <Text style={styles.categoria}>{item.beneficio}</Text>
-            </TouchableOpacity>
+            {/* </TouchableOpacity> */}
         </View>
     )
 };

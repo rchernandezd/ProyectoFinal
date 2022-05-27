@@ -1,5 +1,6 @@
 import { COLEGIOSDATA } from "../../data/ColegiosData";
 import { SELECT_COLEGIO } from "../actions/Colegios.action";
+import { SET_COLEGIO } from "../actions/Colegios.action";
 
 const initialState = {
     colegios: COLEGIOSDATA,

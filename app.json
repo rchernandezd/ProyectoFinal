@@ -4,10 +4,10 @@
     "slug": "AppTienda",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/IconSM.png",
+    "icon": "./assets/IconSM2.png",
     "platforms": ["ios", "android"],
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/ImageSplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -26,7 +26,7 @@
       "package": "com.apptienda.shop",
       "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/favpngSC01.png",
+        "foregroundImage": "./assets/IconSM2.png",
         "backgroundColor": "#FFFFFF"
       },
       "permissions": [

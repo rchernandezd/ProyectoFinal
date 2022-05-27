@@ -20,18 +20,20 @@ const ImageHeaderComp = (props) => {
     {  const usuarios = useSelector(state => state.usuarios.usuarios);
        const email = useSelector(state => state.auth.user);
        const colegios = useSelector(state => state.colegios.colegios);
-       console.log('Colegios: ' + colegios[0].id + colegios[0].nombre + colegios[0].imagen + '-' + colegios[1].id + colegios[1].nombre);
+      //  console.log('Colegios: ' + colegios[0].id + colegios[0].nombre + colegios[0].imagen + '-' + colegios[1].id + colegios[1].nombre);
        const usuIngresado = usuarios.find(usuario => usuario.email === email );
        const colegioUsuario = colegios.find(colegio => colegio.id === usuIngresado.idColegio );
        const imagenColegio = colegioUsuario.imagen;
-       console.log('Nombre Colegio: ' +  colegioUsuario.nombre);
-       console.log('email: ' +  email);
+       const nombreColegioInvitado = colegioUsuario.nombre;
+      //  console.log('Nombre Colegio: ' +  colegioUsuario.nombre);
+      //  console.log('email: ' +  email);
 
-       console.log(usuIngresado.idColegio +  usuIngresado.nombre);
+      //  console.log(usuIngresado.idColegio +  usuIngresado.nombre);
 
-       console.log('ImageCole: ' + imagenColegio);
-       content = <Image source={imagenColegio} style={{ marginTop: 10, marginLeft: 100 , width: 140, height: 45 }}  /> 
-
+      //  console.log('ImageCole: ' + imagenColegio);
+       //content = <Image source={imagenColegio} style={{ marginTop: 10, marginLeft: 100 , width: 140, height: 45 }}  /> 
+       content = <Text style={{ marginTop: 20, marginLeft: 100, color: color.Azul, fontWeight: 'bold', fontSize: 17 }}>{nombreColegioInvitado}</Text>
+       
        const DatosUsuarioAutenticado = useSelector(state => state.usuarios.usuarioAutenticado);
        if (DatosUsuarioAutenticado === null)
        {  console.log('DatosUsuarioAutenticado Nulo');}
@@ -46,8 +48,12 @@ const ImageHeaderComp = (props) => {
      }
      else
       if (ingresarInvitado)
-      { content = <Image source={require('../assets/ColegioTrewelasColina.png')} style={{ marginTop: 10, marginLeft: 100 , width: 140, height: 45 }}  />}
-
+      { //const colegioSeleccionado = useSelector(state => state.auth.nombreColegioInvitado);
+        // const imagenColegioInvitado = useSelector(state => state.auth.imagenColegioInvitado);
+        const nombreColegioInvitado =  useSelector(state => state.auth.nombreColegioInvitado);
+        // content = <Image source={imagenColegioInvitado} style={{ marginTop: 10, marginLeft: 100 , width: 140, height: 45 }}  />
+        content = <Text style={{ marginTop: 20, marginLeft: 100, color: color.Azul, fontWeight: 'bold' }}>{nombreColegioInvitado}</Text>
+      }
 
     return (
         <View style={{ flexDirection: 'row' }}>
