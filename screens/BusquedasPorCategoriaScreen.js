@@ -89,35 +89,39 @@ function BusquedasPorCategoriaScreen({navigation}) {
   return (
     <SafeAreaView>
         <ScrollView style={styles.screen}>
-            <View style={[styles.container, {height: 10}]}>
+            <View style={{height: 1}}>
                 {/* <Text>SLIDER</Text> */}
             </View>
             <View style={[styles.container]}>
                 {/* <TextInput style={styles.input} placeholder='Buscar productos....'/> */}
                 <Text style={styles.texto}>CATEGORIAS DE PRODUCTOS MAS POPULARES</Text>
-                <FlatList
-                    data={categoriasProducto}
-                    keyExtractor={item => item.idCategoria}
-                    renderItem={renderCategoriasItem}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                />
+                <View style={{height: 160}}>
+                    <FlatList
+                        data={categoriasProducto}
+                        keyExtractor={item => item.idCategoria}
+                        renderItem={renderCategoriasItem}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </View>
             </View>
-            <View style={[styles.container]}>
+            <View style={styles.container}>
                 {/* <TextInput style={styles.input} placeholder='Buscar emprendedores....'/> */}
                 <Text style={styles.texto}>EMPRENDEDORES</Text>
-                <FlatList
-                    data={emprendedores}
-                    keyExtractor={item => item.id}
-                    renderItem={renderEmprendedoresItem}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                />
+                <View style={{height: 160}}>
+                    <FlatList
+                        data={emprendedores}
+                        keyExtractor={item => item.id}
+                        renderItem={renderEmprendedoresItem}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </View>
             </View>
             <View style={styles.container}>
             <Text style={styles.texto}>BENEFICIOS</Text>
                 {(sesionActiva) 
-                    ?   <View>
+                    ?   <View style={{height: 160}}>
                             <FlatList
                                 data={beneficios}
                                 keyExtractor={beneficios => beneficios.id}
@@ -148,8 +152,8 @@ const styles = StyleSheet.create({
     container: {
         //flex: 1,
         backgroundColor: color.GrisClaro,
-        padding: 10,
-        margin: 5,
+        padding: 5,
+        marginTop: 1,
     },
     input: {
         width: 300,

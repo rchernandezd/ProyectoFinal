@@ -21,7 +21,7 @@ const CategoriasEmprendedorComp = ({ item, onSelected }) => {
 
 const styles = StyleSheet.create({
     cuadroExterior: {
-        flex: 1,
+        //flex: 1,
         height: 150,
         width: 120,
         //borderWidth: 5,

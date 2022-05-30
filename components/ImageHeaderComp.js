@@ -32,7 +32,7 @@ const ImageHeaderComp = (props) => {
 
       //  console.log('ImageCole: ' + imagenColegio);
        //content = <Image source={imagenColegio} style={{ marginTop: 10, marginLeft: 100 , width: 140, height: 45 }}  /> 
-       content = <Text style={{ marginTop: 20, marginLeft: 100, color: color.Azul, fontWeight: 'bold', fontSize: 17 }}>{nombreColegioInvitado}</Text>
+       content = <Text style={{ marginTop: 20, marginLeft: 50, color: color.Azul, fontWeight: 'bold', fontSize: 17 }}>{nombreColegioInvitado}</Text>
        
        const DatosUsuarioAutenticado = useSelector(state => state.usuarios.usuarioAutenticado);
        if (DatosUsuarioAutenticado === null)
@@ -52,7 +52,7 @@ const ImageHeaderComp = (props) => {
         // const imagenColegioInvitado = useSelector(state => state.auth.imagenColegioInvitado);
         const nombreColegioInvitado =  useSelector(state => state.auth.nombreColegioInvitado);
         // content = <Image source={imagenColegioInvitado} style={{ marginTop: 10, marginLeft: 100 , width: 140, height: 45 }}  />
-        content = <Text style={{ marginTop: 20, marginLeft: 100, color: color.Azul, fontWeight: 'bold' }}>{nombreColegioInvitado}</Text>
+        content = <Text style={{ marginTop: 20, marginLeft: 50, color: color.Azul, fontWeight: 'bold' }}>{nombreColegioInvitado}</Text>
       }
 
     return (
